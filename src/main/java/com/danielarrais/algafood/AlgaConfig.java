@@ -3,6 +3,7 @@ package com.danielarrais.algafood;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.danielarrais.algafood.di.notificacao.Notificador;
 import com.danielarrais.algafood.di.notificacao.NotificadorEmail;
 import com.danielarrais.algafood.di.service.AtivacaoClienteService;
 
@@ -18,10 +19,8 @@ public class AlgaConfig {
 	}
 	
 	@Bean
-	public AtivacaoClienteService ativacaoClienteService() {
-		AtivacaoClienteService ativacaoClienteService = new AtivacaoClienteService(notificadorEmail());
-		
-		return ativacaoClienteService;
+	public AtivacaoClienteService ativacaoClienteService(Notificador notificador) {
+		return new AtivacaoClienteService(notificador);
 	}
 
 }
