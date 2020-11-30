@@ -6,13 +6,13 @@ import org.springframework.stereotype.Component;
 import com.danielarrais.algafood.di.modelo.Cliente;
 
 @Component
-@Profile("prod")
+@Profile("dev")
 @TipoDoNotificador(TipoNotificacao.EMAIL)
-public class NotificadorEmail implements Notificador {
+public class NotificadorEmailMock implements Notificador {
 	
 	private boolean caixaAlta;	
 	
-	public NotificadorEmail() {
+	public NotificadorEmailMock() {
 	}
 	
 	public void notificar(Cliente cliente, String mensagem) {
@@ -20,7 +20,7 @@ public class NotificadorEmail implements Notificador {
 			mensagem = mensagem.toUpperCase();
 		}
 		
-		System.out.printf("Notificando %s através do e-mail %s: %s\n", cliente.getNome(), cliente.getEmail(), mensagem);
+		System.out.printf("A notificação seria enviada para %s através do e-mail %s: %s\n", cliente.getNome(), cliente.getEmail(), mensagem);
 	}
 
 	public boolean isCaixaAlta() {
