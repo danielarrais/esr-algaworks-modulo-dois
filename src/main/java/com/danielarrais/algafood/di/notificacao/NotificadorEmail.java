@@ -1,14 +1,11 @@
 package com.danielarrais.algafood.di.notificacao;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
 import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
 
 import com.danielarrais.algafood.di.modelo.Cliente;
 
-@Component
+//@Component
 @Profile("prod")
 @TipoDoNotificador(TipoNotificacao.EMAIL)
 public class NotificadorEmail implements Notificador {
@@ -34,13 +31,13 @@ public class NotificadorEmail implements Notificador {
 		this.caixaAlta = caixaAlta;
 	}
 	
-	@PostConstruct
+//	@PostConstruct
 	public void init() {
 		System.out.println("Contruiu o serviço!");
 	}
 	
-	@PreDestroy
+//	@PreDestroy
 	public void destroy() {
-		System.out.println("Destruiu o serviço!");
+		System.out.println("Destru o serviço!");
 	}
 }
