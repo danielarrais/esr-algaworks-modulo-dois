@@ -1,13 +1,11 @@
 package com.danielarrais.algafood.di.notificacao;
 
-
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.danielarrais.algafood.di.modelo.Cliente;
 
 @Component
-@Qualifier("notificadorSMS")
+@TipoDoNotificador(TipoNotificacao.SMS)
 public class NotificadorSMS implements Notificador {
 	
 	private boolean caixaAlta;	

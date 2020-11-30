@@ -8,14 +8,13 @@ import org.springframework.stereotype.Component;
 import com.danielarrais.algafood.di.modelo.Cliente;
 
 @Component
-@Qualifier("notificadorEmail")
+@TipoDoNotificador(TipoNotificacao.EMAIL)
 public class NotificadorEmail implements Notificador {
 	
 	private boolean caixaAlta;	
 	
 	public NotificadorEmail() {
 	}
-
 	
 	public void notificar(Cliente cliente, String mensagem) {
 		if(this.caixaAlta) {
@@ -24,7 +23,6 @@ public class NotificadorEmail implements Notificador {
 		
 		System.out.printf("Notificando %s através do e-mail %s: %s\n", cliente.getNome(), cliente.getEmail(), mensagem);
 	}
-
 
 	public boolean isCaixaAlta() {
 		return caixaAlta;

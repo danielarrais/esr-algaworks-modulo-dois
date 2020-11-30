@@ -6,12 +6,14 @@ import org.springframework.stereotype.Component;
 
 import com.danielarrais.algafood.di.modelo.Cliente;
 import com.danielarrais.algafood.di.notificacao.Notificador;
+import com.danielarrais.algafood.di.notificacao.TipoDoNotificador;
+import com.danielarrais.algafood.di.notificacao.TipoNotificacao;
 
 @Component
 public class AtivacaoClienteService {
 
 	@Autowired(required = false)
-	@Qualifier("notificadorEmail")
+	@TipoDoNotificador(TipoNotificacao.SMS)
 	private Notificador notificador;
 
 	public AtivacaoClienteService() {
