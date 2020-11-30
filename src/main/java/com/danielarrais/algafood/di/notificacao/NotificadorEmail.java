@@ -1,11 +1,13 @@
 package com.danielarrais.algafood.di.notificacao;
 
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import com.danielarrais.algafood.di.modelo.Cliente;
 
 @Component
+@Primary
 public class NotificadorEmail implements Notificador {
 	
 	private boolean caixaAlta;	
