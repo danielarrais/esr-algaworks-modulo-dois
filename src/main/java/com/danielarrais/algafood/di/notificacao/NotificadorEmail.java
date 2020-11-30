@@ -1,16 +1,16 @@
 package com.danielarrais.algafood.di.notificacao;
 
+
 import org.springframework.stereotype.Component;
 
 import com.danielarrais.algafood.di.modelo.Cliente;
 
+@Component
 public class NotificadorEmail implements Notificador {
 	
 	private boolean caixaAlta;	
-	private String hostServidorSMTP;
 	
-	public NotificadorEmail(String hostServidorSMTP) {
-		this.hostServidorSMTP = hostServidorSMTP;
+	public NotificadorEmail() {
 	}
 
 	
@@ -27,18 +27,7 @@ public class NotificadorEmail implements Notificador {
 		return caixaAlta;
 	}
 
-
-	public String getHostServidorSMTP() {
-		return hostServidorSMTP;
-	}
-
-
 	public void setCaixaAlta(boolean caixaAlta) {
 		this.caixaAlta = caixaAlta;
-	}
-
-
-	public void setHostServidorSMTP(String hostServidorSMTP) {
-		this.hostServidorSMTP = hostServidorSMTP;
 	}
 }
