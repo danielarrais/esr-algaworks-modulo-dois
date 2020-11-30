@@ -8,7 +8,7 @@ import com.danielarrais.algafood.di.notificacao.NotificadorEmail;
 @Configuration
 public class AlgaConfig {
 	
-	@Bean(initMethod = "init", destroyMethod = "destroy")
+	@Bean
 	public NotificadorEmail notificadorEmail() {
 		NotificadorEmail notificadorEmail = new NotificadorEmail();
 		notificadorEmail.setCaixaAlta(true);
